@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    
+    <h1>Registered Business</h1>
+    <ul class="list-group">
+    {% for businesses in business %}
+        <li class="list-group-item"><a href="businesses/{{businesses.id}}">{{businesses.name}}</a></li>
+    {% endfor %}
+    </ul>
+{% endblock %}
