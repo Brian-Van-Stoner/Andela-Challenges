@@ -34,12 +34,12 @@ class RegisterForm(Form):
     ])
     confirm = PasswordField('Confirm Password')
 
-@app.route('/register', methods=['GET', 'POST'])
-def register():
-    form = RegisterForm(request.form)
-    if request.method == 'POST' and form.validate();
+#@app.route('/register', methods=['GET', 'POST'])
+#def register():
+#    form = RegisterForm(request.form)
+#    if request.method == 'POST' and form.validate();
 
-    return
+#    return
 
 # This line means that your flask app will being run if we run from app.py
 if __name__ == '__main__':
