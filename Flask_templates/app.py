@@ -41,5 +41,6 @@ def register():
 
     return
 
+# This line means that your flask app will being run if we run from app.py
 if __name__ == '__main__':
     app.run(debug=True) 
