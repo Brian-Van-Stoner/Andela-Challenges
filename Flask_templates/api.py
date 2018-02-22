@@ -27,7 +27,7 @@ def returnOne(name):
 #adding values to the dic
 @app.route('/allusers', methods=['POST'])
 def addUser():
-    username = {'name' : request.json['name']} #creates a new dic and return Json value sent by POST request
+    username = {'name' : request.args['name']} #creates a new dic and return Json value sent by POST request
     
     users.append(username)
     return jsonify({'users' : users})
@@ -36,7 +36,7 @@ def addUser():
 @app.route('/allusers/<string:name>', methods=['PUT'])
 def editOne(name):
     userful = [user for user in users if user['name'] == name]
-    userful[0]['name'] = request.json['name'] #update name 
+    userful[0]['name'] = request.args['name'] #update name 
     return jsonify({'user' : userful[0]})
 
 #Delete Request
