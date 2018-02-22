@@ -3,7 +3,11 @@ from flask import Flask, request, session, jsonify
 
 app = Flask(__name__) #app uses flask
 
-users = [{'name': 'Brian'}, {'name': 'John'}, {'name': 'Alex'}]
+users = [
+    {'name': 'Brian Nomwesigwa', 'email':'bnomwesigwa@gmail.com', 'password':'rest'}, 
+    {'name': 'John Bay', 'email': 'bhoa@gmail.com', 'password': 'restful'}, 
+    {'name': 'Alex Hunter', 'email': 'api@gmail.com', 'password': 'restless'}
+]
 
 @app.route('/', methods=['GET'])
 def Test():
