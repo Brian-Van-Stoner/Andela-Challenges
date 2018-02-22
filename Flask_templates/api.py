@@ -28,8 +28,23 @@ def returnOne(name):
 @app.route('/allusers', methods=['POST'])
 def addUser():
     username = {'name' : request.json['name']} #creates a new dic and return Json value sent by POST request
+    
     users.append(username)
     return jsonify({'users' : users})
+ 
+#Updating DB
+@app.route('/allusers/<string:name>', methods=['PUT'])
+def editOne(name):
+    userful = [user for user in users if user['name'] == name]
+    userful[0]['name'] = request.json['name'] #update name 
+    return jsonify({'user' : userful[0]})
+
+#Delete Request
+@app.route('/allusers/<string:name>', methods=['DELETE'])
+def deleteOne(name):
+    userless = [user for user in users if user['name'] == name]
+    users.remove(userless[0])
+    return jsonify({'users': users[0]})
 
 if __name__ == '__main__':
     app.run(debug=True) 
