@@ -3,25 +3,33 @@ from flask import Flask, request, session, jsonify
 
 app = Flask(__name__) #app uses flask
 
+#Dic to be used
 users = [
-    {'name': 'Brian Nomwesigwa', 'email':'bnomwesigwa@gmail.com', 'password':'rest'}, 
-    {'name': 'John Bay', 'email': 'bhoa@gmail.com', 'password': 'restful'}, 
-    {'name': 'Alex Hunter', 'email': 'api@gmail.com', 'password': 'restless'}
+    {'name': 'Brian'}, {'name': 'John'}, {'name': 'Alex'}
 ]
-
+#Test code Just to make sure it works fine
 @app.route('/', methods=['GET'])
-def Test():
+def test():
     return jsonify({'message':'it works properly'})
 
+#Returning the whole dic
 @app.route('/allusers', methods=['GET'])
-def ReturnAll():
-    return jsonify({'users': users})
+def returnAll():
+    return jsonify({'users' : users})
 
 
+#returning only the value searched for
 @app.route('/allusers/<string:name>', methods=['GET'])
-def ReturnOne(name):
-    user = [user for user in users if user['name'] == name]
-    return jsonify({'user':users[0]})
+def returnOne(name):
+    userful = [user for user in users if user['name'] == name]
+    return jsonify({'user' : userful[0]})
+
+#adding values to the dic
+@app.route('/allusers', methods=['POST'])
+def addUser():
+    username = {'name' : request.json['name']} #creates a new dic and return Json value sent by POST request
+    users.append(username)
+    return jsonify({'users' : users})
 
 if __name__ == '__main__':
     app.run(debug=True) 
