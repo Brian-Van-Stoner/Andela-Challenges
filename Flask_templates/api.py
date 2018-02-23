@@ -1,5 +1,6 @@
 #import objects from a flask model first
 from flask import Flask, request, session, jsonify
+from flask_restful import Api
 
 app = Flask(__name__) #app uses flask
 
@@ -45,6 +46,7 @@ def deleteOne(name):
     userless = [user for user in users if user['name'] == name]
     users.remove(userless[0])
     return jsonify({'users': users[0]})
+    
 
 if __name__ == '__main__':
     app.run(debug=True) 
