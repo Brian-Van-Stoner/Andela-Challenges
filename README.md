@@ -8,15 +8,15 @@ This is a WeConnect project. It is meant for businesses. You can register as bus
 It meant for business owners and also people looking for certain businesses around.
 
 ### Prerequisites:
-* [HTML/CSS]
-* [Javascript/ES6]
-* [Python/Flask]
-* [GIT and Version Control]
+* HTML/CSS
+* Javascript/ES6
+* Python/Flask
+* GIT and Version Control
 
 ### Built With:
 
-* [Html, CSS and Javascript - For Interface design]
-* [Flask - For Back-end]
+* Html, CSS and Javascript - For Interface design
+* Flask - For Back-end
 
 ### Authors
 Brian Nomwesigwa - Original work
